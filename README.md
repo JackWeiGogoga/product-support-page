@@ -9,8 +9,15 @@ Static support website for the iOS app `Lingshot`.
 - shadcn-style UI components (`components/ui`)
 
 ## Routes
-- `/lingshot/` -> Technical support page
-- `/lingshot/privacy` -> Privacy policy
+- `/:product` -> Technical support page (example: `/lingshot`)
+- `/:product/privacy` -> Privacy policy (example: `/lingshot/privacy`)
+
+## Page Organization
+- Product pages are organized as `src/pages/<product>/`.
+- For each product folder, provide:
+  - `SupportPage.tsx`
+  - `PrivacyPage.tsx`
+- Example: `src/pages/lingshot/SupportPage.tsx` and `src/pages/lingshot/PrivacyPage.tsx`.
 
 ## Development
 ```bash
@@ -25,6 +32,4 @@ npm run preview
 ```
 
 ## Notes
-- `vite.config.ts` uses `base: /lingshot/` by default.
-- You can override base path with env:
-  - `VITE_BASE_PATH=/another-project/`
+- `vite.config.ts` uses root `base: /` so one build can serve multiple product paths.

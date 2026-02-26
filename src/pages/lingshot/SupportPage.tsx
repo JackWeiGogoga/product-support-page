@@ -109,7 +109,7 @@ export function SupportPage() {
               <a href="mailto:jackweigogoga@gmail.com">{t.contactSupport}</a>
             </Button>
             <Button asChild variant="outline" className="rounded-full border-slate-300 bg-white/80 px-6">
-              <Link to="/privacy">
+              <Link to="privacy">
                 {t.privacyPolicy}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

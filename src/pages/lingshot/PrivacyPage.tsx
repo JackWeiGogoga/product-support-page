@@ -2,11 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 type Lang = "en" | "zh";
 
 export function PrivacyPage() {
+  const { product = "lingshot" } = useParams();
   const [lang, setLang] = useState<Lang>("en");
   const t = useMemo(
     () =>
@@ -146,7 +147,7 @@ export function PrivacyPage() {
 
         <div className="mt-8">
           <Button asChild variant="outline" className="rounded-full border-slate-300 bg-white/80 px-6">
-            <Link to="/">{t.back}</Link>
+            <Link to={`/${product}`}>{t.back}</Link>
           </Button>
         </div>
       </div>
